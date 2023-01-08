@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import PostList from './components/PostList';
+import MyButton from './components/UI/button/MyButton';
+import MyInput from './components/UI/input/MyInput';
+import './styles/App.css';
+// import ClassCounter from './components/ClassCounter';
+// import Counter from './components/Counter';
 
 function App() {
+
+  const [posts] = useState([
+    {id: 1, title: 'Javascript', body: 'description'},
+    {id: 2, title: 'Javascript 2', body: 'description'},
+    {id: 3, title: 'Javascript 3', body: 'description'},
+  ]) 
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <form> 
+        <MyInput type='text' placeholder='Post name'/>
+        <MyInput type='text' placeholder='Post description'/>
+        <MyButton>Create post</MyButton>
+      </form>
+      <PostList posts={posts} title='list of posts 1'/>
     </div>
-  );
+  )
 }
 
 export default App;
