@@ -34,6 +34,23 @@
     opacity: 1;
   }
 .post-exit-active {
-    transform: translate(-350px);
+    transform: translate(-360px);
     transition: all 500ms ease-in;
+  }
+
+  .page__wrapper {
+    margin-top: 30px;
+    display: flex;
+
+  }
+
+  .page {
+    padding: 10px;
+    cursor: pointer;
+    border: 1px solid teal;
+  }
+
+  .page__current {
+    border: 2px solid orange;
+    font-weight: bold;
   }
